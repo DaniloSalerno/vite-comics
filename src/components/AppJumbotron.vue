@@ -5,7 +5,8 @@ export default {
 </script>
 
 <template>
-    <div id="jumbo" class="container">
+    <div id="jumbo">
+        <div class="container"></div>
         <!-- CONTENT GOES HERE -->
     </div>
 </template>
