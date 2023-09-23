@@ -7,7 +7,31 @@ export default {
             dcComicsLinks: ['Characters', 'Comics', 'Movies', 'TV', 'Games', 'Videos', 'News'],
             shopLinks: ['Shop DC', 'Shop DC Collectibles'],
             dcLinks: ['Terms Of Use', 'Privacy policy (New)', 'Ad Choices', 'Advertising', 'Jobs', 'Subscriptions', 'Talent Workshops', 'CPSC Certificates', 'Shop Help', 'Contact US'],
-            sitesLinks: ['DC', 'MAD Magazine', 'DC Kids', 'DC Universe', 'DC Power Visa']
+            sitesLinks: ['DC', 'MAD Magazine', 'DC Kids', 'DC Universe', 'DC Power Visa'],
+
+            socials: [
+                {
+                    img: './src/assets/img/footer-facebook.png',
+                    href: '##'
+                },
+                {
+                    img: './src/assets/img/footer-twitter.png',
+                    href: '##'
+                },
+                {
+                    img: './src/assets/img/footer-youtube.png',
+                    href: '##'
+                },
+                {
+                    img: './src/assets/img/footer-pinterest.png',
+                    href: '##'
+                },
+                {
+                    img: './src/assets/img/footer-periscope.png',
+                    href: '##'
+                },
+
+            ]
         }
     }
 }
@@ -77,22 +101,10 @@ export default {
                     </a>
                 </div>
 
-                <div class=" d-flex align-items-center gap-4">
+                <div id="socials" class=" d-flex align-items-center gap-4">
                     <h3>follow us</h3>
-                    <a href="##">
-                        <img src="../assets/img/footer-facebook.png" alt="">
-                    </a>
-                    <a href="##">
-                        <img src="../assets/img/footer-twitter.png" alt="">
-                    </a>
-                    <a href="##">
-                        <img src="../assets/img/footer-youtube.png" alt="">
-                    </a>
-                    <a href="##">
-                        <img src="../assets/img/footer-pinterest.png" alt="">
-                    </a>
-                    <a href="##">
-                        <img src="../assets/img/footer-periscope.png" alt="">
+                    <a v-for="social in socials" href="social.href">
+                        <img :src="social.img" alt="">
                     </a>
                 </div>
 
@@ -108,6 +120,7 @@ export default {
 @use '../assets/scss/partials/viariables' as *;
 
 .footer_top {
+
     height: 400px;
     background-image: url('../assets/img/footer-bg.jpg');
     background-repeat: no-repeat;
@@ -115,38 +128,54 @@ export default {
     overflow-y: hidden;
 
     h3 {
+
         text-transform: uppercase;
         color: white;
         font-weight: bolder;
         font-size: 1.25rem;
+
     }
 
     a {
+
         color: gray;
         text-decoration: none;
 
         &:hover {
+
             color: white;
+
         }
     }
 
     .logo {
+
         background-image: url('../assets/img/dc-logo-bg.png');
         background-repeat: no-repeat;
         background-position: center;
+
     }
 }
 
 .footer_bottom {
+
     height: 110px;
     background-color: $dc_dark;
 
     h3 {
+
         text-transform: uppercase;
         color: $dc_primary;
         font-weight: bold;
         font-size: 1.25rem;
         padding-top: 0.5rem;
+
+    }
+
+    #socials a img:hover {
+
+        filter: brightness(3);
+
     }
 
 }

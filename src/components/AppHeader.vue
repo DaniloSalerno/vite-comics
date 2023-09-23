@@ -3,8 +3,11 @@ export default {
     name: 'AppHeader',
     data() {
         return {
+
             activeLink: 0,
+
             navItems: ['characters', 'comics', 'movies', 'tv', 'games', 'collectibles', 'videos', 'fans', 'news', 'shop']
+
         }
     }
 }
@@ -12,24 +15,36 @@ export default {
 
 <template>
     <header>
+
         <div class="header_wrapper container d-flex justify-content-between align-items-center w-75">
 
+            <a href="##">
 
-            <img width="75" src="../assets/img/dc-logo.png" alt="">
+                <img width="75" src="../assets/img/dc-logo.png" alt="">
 
+            </a>
 
             <div>
+
                 <nav class="navbar navbar-expand navbar-light">
+
                     <ul v-for="(item, index) in navItems" class="nav navbar-nav">
+
                         <li class="nav-item" @click="activeLink = index">
+
                             <a class="nav-link" :class="activeLink === index ? 'active' : ''" href="#"
                                 aria-current="page">{{ item }}</a>
+
                         </li>
+
                     </ul>
+
                 </nav>
+
             </div>
 
         </div>
+
     </header>
 </template>
 
@@ -42,8 +57,6 @@ header {
 
     .header_wrapper {
         height: 100%;
-
-
 
         li {
 
