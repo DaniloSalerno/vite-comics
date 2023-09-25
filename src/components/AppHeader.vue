@@ -6,7 +6,54 @@ export default {
 
             activeLink: 0,
 
-            navItems: ['characters', 'comics', 'movies', 'tv', 'games', 'collectibles', 'videos', 'fans', 'news', 'shop']
+            navItems: [
+                {
+                    name: 'characters',
+                    current: false
+                },
+
+                {
+                    name: 'comics',
+                    current: true
+                },
+
+                {
+                    name: 'movies',
+                    current: false
+                },
+
+                {
+                    name: 'tv',
+                    current: false
+                },
+
+                {
+                    name: 'games',
+                    current: false
+                },
+
+                {
+                    name: 'collectibles',
+                    current: false
+                },
+                {
+                    name: 'videos',
+                    current: false
+                },
+                {
+                    name: 'fans',
+                    current: false
+                },
+                {
+                    name: 'news',
+                    current: false
+                },
+                {
+                    name: 'shop',
+                    current: false
+                }
+
+            ]
 
         }
     }
@@ -28,12 +75,13 @@ export default {
 
                 <nav class="navbar navbar-expand navbar-light">
 
-                    <ul v-for="(item, index) in navItems" class="nav navbar-nav">
+                    <ul class="nav navbar-nav">
 
-                        <li class="nav-item" @click="activeLink = index">
+                        <li v-for="(item, index) in navItems" class="nav-item">
 
-                            <a class="nav-link" :class="activeLink === index ? 'active' : ''" href="#"
-                                aria-current="page">{{ item }}</a>
+                            <a class="nav-link" :class="{ 'active': item.current }" href="#" aria-current="page">{{
+                                item.name
+                            }}</a>
 
                         </li>
 
