@@ -176,6 +176,7 @@ export default {
 
         filter: brightness(3);
 
+        transition: filter, 0.5s;
     }
 
 }
