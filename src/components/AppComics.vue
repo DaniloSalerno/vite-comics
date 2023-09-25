@@ -19,7 +19,7 @@ export default {
 
 <template>
     <div class="col">
-        <div class="card">
+        <div class="card border-0">
             <img class="card-img-top" :src="thumb" alt="">
             <div class="card-body ps-0">
                 <h6 class="card-title text-white text-uppercase"> {{ series }}</h6>
